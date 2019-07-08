@@ -1,0 +1,5 @@
+{
+	"minMatchesQuantity": 2,
+	"minOccurrences": 4,
+	"port": 3000
+}

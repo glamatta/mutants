@@ -1,0 +1,25 @@
+{
+  "name": "mutants",
+  "version": "1.0.0",
+  "description": "Examen",
+  "main": "start.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node start.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "quickTest": "node test/quickTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glamatta/mutants.git"
+  },
+  "author": "Gonzalo Lamatta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glamatta/mutants/issues"
+  },
+  "homepage": "https://github.com/glamatta/mutants#readme"
+}
