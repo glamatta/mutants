@@ -4,7 +4,9 @@
   "description": "Examen",
   "main": "start.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "@google-cloud/firestore": "^2.2.3",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
