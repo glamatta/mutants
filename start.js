@@ -6,23 +6,27 @@ const config = require('./config.json');
 const identifier = require('./controllers/mutanIdentifier');
 const data = require('./test/dna');
 
-const firestore = new Firestore();
 const db = new Firestore({
   projectId: 'mutants-246102',
   keyFilename: 'C:\\DEV\\keys\\mutants-4f181f170813.json',
 });
+
+const dnaCollection = db.collection('dna');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/mutant', (req, res) => {
 	let dna = req.body.dna;
-	let addedDna = db.collection('dna').add({
-	  addedAt: new Date(),
-	  data: JSON.stringify(req.body)
-	}).then(ref => {
-	  console.log('Added document with ID: ', ref.id);
-	});
+	dnaCollection.where('data', '==', JSON.stringify(req.body)).get().then(
+		snapshot => {
+			if (snapshot.empty) {
+				dnaCollection.add({
+				  addedAt: new Date(),
+				  data: JSON.stringify(req.body)
+				});
+			} else { console.info("ya estaba!");}
+		});
 	let count = 0;
 	count += identifier.findHorizontalMatch(dna);
 	count += identifier.findVerticalMatch(dna);
