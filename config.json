@@ -1,5 +1,9 @@
 {
 	"minMatchesQuantity": 2,
 	"minOccurrences": 4,
-	"port": 80
+	"defaultPort": 80,
+	"dbConnection": {
+	  "projectId": "mutants-246102",
+	  "keyFilename": "./mutants-4f181f170813.json"
+	}
 }
