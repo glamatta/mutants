@@ -20,6 +20,9 @@ app.set("views", path.join(__dirname, "views"));
 // publicar resultado HTML de Code Coverage
 app.use('/coverage', express.static(path.join(__dirname, 'coverage')));
 
+// publicar archivos de recursos web
+app.use('/files', express.static(path.join(__dirname, 'public/resources')));
+
 // publicar documentación
 app.use('/doc', (req, res) => {
   fs.readFile(__dirname + '/public/doc' + req.path, 'utf-8', function(err, data) {
@@ -56,7 +59,7 @@ app.post('/mutant', (req, res) => {
 				snapshot => { if (snapshot.empty) dnaCollection.add(dnaItem) }
 			);
 		}
-		
+
 	} else {
 		res.status(400).json({"code": 400, "message": "Bad Request"});
 	}
