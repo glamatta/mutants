@@ -63,6 +63,11 @@ Y para ejecutar los test y además las estadísticas de _Code Coverage_ (lo que 
 npm run coverage
 ```
 
+Despliegue de la aplicación en GCP, teniendo las configuraciones y accesos previamente configurados, se debe ejecutar:
+```
+gcloud app deploy
+```
+
 ## Funcionalidad de la aplicación
 
 ### Requerimiento inicial
