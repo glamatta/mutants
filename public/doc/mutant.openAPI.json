@@ -1,0 +1,203 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "MutantAPI",
+        "version": "1.0.0",
+        "description": "API para Examen",
+        "contact": {
+            "name": "Gonzalo Lamatta",
+            "email": "glamatta@gmail.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://mutants-246102.appspot.com",
+            "description": "Servidor AppEngine de Google Cloud Plataform"
+        }
+    ],
+    "paths": {
+        "/mutant": {
+            "summary": "Detector de Mutantes",
+            "description": "El servicios está diseñado para recibir una entrada de DNA el que se analizará para identificar si es mutante o no, según las reglas definidas para identificarlo.",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DNA"
+                            },
+                            "examples": {
+                                "Mutante": {
+                                    "value": {
+                                        "dna": [
+                                            "ATGCGA",
+                                            "CAGTGC",
+                                            "TTATGT",
+                                            "AGAAGG",
+                                            "CCCCTA",
+                                            "TCACTG"
+                                        ]
+                                    }
+                                },
+                                "No-mutante": {
+                                    "value": {
+                                        "dna": [
+                                            "ATGCGA",
+                                            "CAGTGC",
+                                            "TTATTT",
+                                            "AGACGG",
+                                            "GCGTCA",
+                                            "TCACTG"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/resp"
+                                },
+                                "examples": {
+                                    "Mutante": {
+                                        "value": {
+                                            "isMutant": true
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Responde code 200 cuando se identifica como mutante el DNA entregado"
+                    },
+                    "403": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/resp"
+                                },
+                                "examples": {
+                                    "No-mutante": {
+                                        "value": {
+                                            "isMutant": false
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Responde code 403 cuando se identifica como NO mutante (humano) el DNA entregado"
+                    }
+                },
+                "operationId": "isMutant",
+                "description": "El DNA debe cumplir con las condiciones básicas.\nmás información en https://mutants-246102.appspot.com/"
+            }
+        },
+        "/stats": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/stats"
+                                },
+                                "examples": {
+                                    "stats": {
+                                        "value": {
+                                            "count_mutant_dna": 10,
+                                            "count_human_dna": 4,
+                                            "ratio": 0.7142857142857143
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Estadísticas registradas en la base de datos"
+                    }
+                },
+                "operationId": "stats",
+                "summary": "Estadísticas de Mutantes",
+                "description": "Entrega información de los DNA procesados almacenados en la DB."
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DNA": {
+                "description": "Objeto con una lista (Array) de string de datos del DNA (el largo de las string debe ser del mismo tamaño de la cantidad de string para forma una matriz de \"N x N\")",
+                "required": [
+                    "dna"
+                ],
+                "type": "object",
+                "properties": {
+                    "dna": {
+                        "description": "Debe contener strings del mismo largo que la cantidad de string, para forma una matriz de \"N x N\"",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "example": {
+                    "dna": [
+                        "ATGCGA",
+                        "CAGTGC",
+                        "TTATTT",
+                        "AGACGG",
+                        "GCGTCA",
+                        "TCACTG"
+                    ]
+                }
+            },
+            "resp": {
+                "description": "Respuesta del análisis de DNA",
+                "required": [
+                    "isMutant"
+                ],
+                "type": "object",
+                "properties": {
+                    "isMutant": {
+                        "description": "",
+                        "type": "boolean"
+                    }
+                },
+                "example": {
+                    "isMutant": true
+                }
+            },
+            "stats": {
+                "description": "Estadísiticas en la base de datos",
+                "required": [
+                    "count_mutant_dna",
+                    "count_human_dna",
+                    "ratio"
+                ],
+                "type": "object",
+                "properties": {
+                    "count_mutant_dna": {
+                        "description": "cantidad de DNAs identificados como mutantes",
+                        "type": "number"
+                    },
+                    "count_human_dna": {
+                        "description": "cantidad de DNAs identificados como no-mutantes (humanos)",
+                        "type": "number"
+                    },
+                    "ratio": {
+                        "format": "float",
+                        "description": "Relación de mutantes VS humanos",
+                        "type": "number"
+                    }
+                },
+                "example": {
+                    "count_mutant_dna": 10,
+                    "count_human_dna": 4,
+                    "ratio": 0.7142857142857143
+                }
+            }
+        }
+    }
+}

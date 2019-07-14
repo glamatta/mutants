@@ -1,0 +1,25 @@
+.table td {
+   text-align: center;
+   font-weight: bold; 
+}
+
+table.mutant tr:nth-child(1) td:nth-child(1),
+table.mutant tr:nth-child(2) td:nth-child(2),
+table.mutant tr:nth-child(3) td:nth-child(3),
+table.mutant tr:nth-child(4) td:nth-child(4)  {
+   color: green;
+}
+
+table.mutant tr:nth-child(1) td:nth-child(5),
+table.mutant tr:nth-child(2) td:nth-child(5),
+table.mutant tr:nth-child(3) td:nth-child(5),
+table.mutant tr:nth-child(4) td:nth-child(5)  {
+   color: blue;
+}
+
+table.mutant tr:nth-child(5) td:nth-child(1),
+table.mutant tr:nth-child(5) td:nth-child(2),
+table.mutant tr:nth-child(5) td:nth-child(3),
+table.mutant tr:nth-child(5) td:nth-child(4)  {
+   color: red;
+}
