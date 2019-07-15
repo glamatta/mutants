@@ -9,7 +9,7 @@ const showdown = require('showdown');
 const prettify = require('showdown-prettify');
 const converter = new showdown.Converter({emoji: true, tables: true, extensions: ['prettify']});
 
-const db = new Firestore(config.dbConnection);
+const db = new Firestore();
 
 const dnaCollection = db.collection('dna');
 

@@ -6,11 +6,11 @@ Este es el proyecto solicitado en un [examen (detalle en el link)](/doc/examen.m
 
 ## :heavy_check_mark: Entrega
 
-La aplicación entregada es una **App Engine** de [Google Cloud Plataform (GCP)](https://cloud.google.com/) desarrollada en Nodejs, conectada también con **Cloud Firestore** de GCP como base de datos. El repositorio se encuentra en [GitHub](https://github.com/glamatta/mutants).
+La aplicación entregada es una **App Engine** de [Google Cloud Plataform (GCP)](https://cloud.google.com/) desarrollada en Nodejs, conectada también con **Cloud Firestore** de GCP como base de datos. El repositorio se encuentra en [GitHub glamatta/mutants](https://github.com/glamatta/mutants).
 
 ## :electric_plug: Probar la aplicación
 
-La aplicación expone documentación además de los servicios (ver en: [https://mutants-246102.appspot.com/](https://mutants-246102.appspot.com/)).
+La aplicación expone documentación además de los servicios (ver en: [https://mutants1.appspot.com/](https://mutants1.appspot.com/)).
 Existe un archivo de definición de la API en [OpenAPI v3.0.2](https://swagger.io/specification/) con el cual se puede iniciar una colección o proyecto de API en algún cliente de APIs como por ejemplo [Postman](https://www.getpostman.com/) o [Insomnia](https://insomnia.rest/): 
 
 :page_facing_up: **[mutant.openAPI.json](/files/mutant.openAPI.json)**
@@ -18,7 +18,7 @@ Existe un archivo de definición de la API en [OpenAPI v3.0.2](https://swagger.i
 Ejemplo de la ejecución del post:
 <p><a href="/files/post-example.png" target="blank"> <img src="/files/post-example.png" alt="POST en Postman" width="500"/></a></p>
 
-El resultado estadístico se puede probar directamente en browser: [https://mutants-246102.appspot.com/stats](https://mutants-246102.appspot.com/stats)
+El resultado estadístico se puede probar directamente en browser: [https://mutants1.appspot.com/stats](https://mutants1.appspot.com/stats)
 
 ## :computer: Instalar 
 
@@ -130,7 +130,7 @@ Los test automatizados constan de 14 dna que pruebas casos de mutantes, no-mutan
 
 Resultado de logs de test y code coverage se puede visualizar en el ejemplo [testandcoverage.log](/files/testandcoverage.log)
 
-Adicionalmente la aplicación publica también la generación del _Code Coverage_ en HTML en [https://mutants-246102.appspot.com/coverage/index.html](https://mutants-246102.appspot.com/coverage/index.html)
+Adicionalmente la aplicación publica también la generación del _Code Coverage_ en HTML en [https://mutants1.appspot.com/coverage/index.html](https://mutants1.appspot.com/coverage/index.html)
 
 ![coverage](/files/coverage-example.png)
 
