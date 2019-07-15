@@ -70,7 +70,7 @@ Despliegue de la aplicación en GCP. Teniendo las configuraciones y accesos prev
 gcloud app deploy
 ```
 
-## Análisis de DNA
+## :hammer: Análisis de DNA
 
 ### Requerimiento inicial
 La funcionalidad se implementa basada en la [documentación entregada](/public/doc/examen.md) donde, en resumen, se debe analizar una matriz [ `n` x `n` ] de _strings_ que sólo contienen las letras `A`, `C`, `T` y `G`. Se debe construir un servicio REST que reciba esta información y responda si esa matriz de DNA corresponde a un mutante o no, respondiendo al POST con un **http status = 200** si es mutante y **http status = 403** si no es.
@@ -124,7 +124,7 @@ En cuanto al análisis de los datos se definen los siguientes supuestos:
 
 :bulb: Estas reglas son totalmente posibles de modificar, pero dado que no había especificación detallada al respecto, la aplicación actualmente considera estas definiciones.
 
-## Test y Code Coverage
+## :bar_chart: Test y Code Coverage
 
 Los test automatizados constan de 14 dna que pruebas casos de mutantes, no-mutantes y dna inválidos. Se encuentran en el directorio 'test/dna'.
 
