@@ -171,3 +171,22 @@ describe('Pruebas de servicios REST', () => {
 		server.runningServer.close();
 	});
 });
+
+describe('Pruebas de documentación', () => {
+	const server = require('../app');
+	
+	describe('/GET Home', () => {
+		it('Debe responder un HTML para el home de la documentación', (done) => {
+			chai.request(server)
+			.get('/')
+			.end((err, res) => {
+				res.should.have.status(200);
+				done();
+			});
+		});
+	});
+
+	after(()=>{
+		server.runningServer.close();
+	});
+});

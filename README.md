@@ -2,7 +2,7 @@
 
 ## :bulb: Contexto
 
-Este es el proyecto solicitado en un [examen (detalle en el link)](/doc/examen.md). Donde se pide crear unos servicios REST para detectar mutantes según DNA entrega y también poder ver estadísticas de los datos procesados. 
+Este es el proyecto solicitado en un [examen (detalle en el link)](/public/doc/examen.md), donde se pide crear unos servicios REST para detectar mutantes según DNA entregado y también poder ver estadísticas de los datos procesados. 
 
 ## :heavy_check_mark: Entrega
 
@@ -10,11 +10,13 @@ La aplicación entregada es una **App Engine** de [Google Cloud Plataform (GCP)]
 
 ## :electric_plug: Probar la aplicación
 
-La aplicación expone documentación además de los servicios, ver en: https://mutants-246102.appspot.com/ .
-Existe un archivo de definición de la API en [OpenAPI v3.0.2](https://swagger.io/specification/) con el cual se puede iniciar una colección o proyecto de API en algún cliente de APIs como por ejemplo [Postman](https://www.getpostman.com/) o [Insomnia](https://insomnia.rest/): [mutant.openAPI.json](/files/mutant.openAPI.json)
+La aplicación expone documentación además de los servicios (ver en: [https://mutants-246102.appspot.com/](https://mutants-246102.appspot.com/)).
+Existe un archivo de definición de la API en [OpenAPI v3.0.2](https://swagger.io/specification/) con el cual se puede iniciar una colección o proyecto de API en algún cliente de APIs como por ejemplo [Postman](https://www.getpostman.com/) o [Insomnia](https://insomnia.rest/): 
+
+:page_facing_up: **[mutant.openAPI.json](/public/resources/mutant.openAPI.json)**
 
 Ejemplo de la ejecución del post:
-<p><a href="/files/post-example.png" target="blank"> <img src="/files/post-example.png" alt="POST en Postman" width="300"/></a></p>
+<p><a href="/public/resources/post-example.png" target="blank"> <img src="/public/resources/post-example.png" alt="POST en Postman" width="500"/></a></p>
 
 El resultado estadístico se puede probar directamente en browser: [https://mutants-246102.appspot.com/stats](https://mutants-246102.appspot.com/stats)
 
@@ -28,12 +30,12 @@ Instalar previamente:
 
 ### Instalción de la aplicación
 
-Estando una consola/terminal en el directorio donde deseas instalar la aplicación, ejecutas:
+Estando en una consola o terminal en el directorio donde deseas instalar la aplicación, ejecutas:
 
 ```
 git clone https://github.com/glamatta/mutants.git
 ```
-Una vez descargado el projecto entras al directorio donde se instaló la aplicación
+Una vez descargado el proyecto entras al directorio donde se instaló la aplicación:
 
 ```
 cd mutants
@@ -50,28 +52,28 @@ Luego de la instalación ya puedes ejecutar el servidor:
 ```
 npm run start
 ```
-:warning: _debes asegurarte no tener otro servicio utilizando el puerto 80 que es el que usará la aplicación por defecto_
+:warning: _debes asegurarte no tener otro servicio utilizando el puerto 80 que es el que usará la aplicación por defecto_.
 
-Si quieres ejecutar los test, debes utilizar:
+Si quieres ejecutar los test debes utilizar:
 
 ```
 npm run test
 ```
-Y para ejecutar los test y además las estadísticas de _Code Coverage_ (lo que actualizará también los HTMLs) ejecutar:
+Y para ejecutar los test y además las estadísticas de _Code Coverage_ (lo que actualizará también los HTMLs), ejecutar:
 
 ```
 npm run coverage
 ```
 
-Despliegue de la aplicación en GCP, teniendo las configuraciones y accesos previamente configurados, se debe ejecutar:
+Despliegue de la aplicación en GCP. Teniendo las configuraciones y accesos previamente configurados, se debe ejecutar:
 ```
 gcloud app deploy
 ```
 
-## Funcionalidad de la aplicación
+## Análisis de DNA
 
 ### Requerimiento inicial
-La funcionalidad se implementa basada en la [documentación entregada](/doc/examen.md) donde, en resumen, se debe analizar una matriz [ `n` x `n` ] de strings que sólo contienen las letras `A`, `C`, `T` y `G`. Se debe construir un servicio REST que reciba esta información y responda si esa matriz de DNA corresponde a un mutante o no, respondiendo al POST con un **http status = 200** si es mutante y **http status = 403** si no es.
+La funcionalidad se implementa basada en la [documentación entregada](/public/doc/examen.md) donde, en resumen, se debe analizar una matriz [ `n` x `n` ] de _strings_ que sólo contienen las letras `A`, `C`, `T` y `G`. Se debe construir un servicio REST que reciba esta información y responda si esa matriz de DNA corresponde a un mutante o no, respondiendo al POST con un **http status = 200** si es mutante y **http status = 403** si no es.
 Es un mutante si se encuentran al menos 2 secuencias de 4 de las mismas letras consecutivas, secuencias que pueden estar horizontal, vertical u oblicuas, como lo muestran los ejemplos entregados:
 
 <div class="row">
@@ -107,14 +109,14 @@ Es un mutante si se encuentran al menos 2 secuencias de 4 de las mismas letras c
 
 Para realizar la programación fue necesario considerar algunas definiciones que no se encontraban en la declaración inicial, la aplicación requiere:
 
-- El objeto de entrada siempre será un json que contiene sólo una propiedad llamada `dna` (en minúsculas) y esta propiedad tiene como valor un arreglo de strings
+- El objeto de entrada siempre será un `json` que contiene sólo una propiedad llamada `dna` (en minúsculas) y esta propiedad tiene como valor un arreglo de _strings_
 - 4 ≤ `n` ≤ 1000
-- Las strings NO contienen otros caracteres más que `A`, `C`, `T` y `G` en mayúsculas.
-- todas las strings tendrán la misma cantidad de caracteres que la strings para que los datos siempre sean una matriz cuadrada de [ `n` x `n` ]
+- Las _strings_ NO contienen otros caracteres más que `A`, `C`, `T` y `G` en mayúsculas.
+- todas las _strings_ tendrán la misma cantidad de caracteres que la cantidad de _strings_ para que los datos siempre sean una matriz cuadrada de [ `n` x `n` ]
 
 :warning: De no cumplirse alguna de esas condiciones la respuesta de la aplicación será **400: Bad Request**
 
-En cuanto al análisis de los datos, se definen los siguientes supuestos:
+En cuanto al análisis de los datos se definen los siguientes supuestos:
 
 - un _match_ es una coincidencia de 4 letras consecutivas
 - los _match_ pueden cruzarse si están en distintas direcciones, por ejemplo horizontal y vertical, aunque se crucen se consideran 2 _match_ distintos
@@ -122,15 +124,24 @@ En cuanto al análisis de los datos, se definen los siguientes supuestos:
 
 :bulb: Estas reglas son totalmente posibles de modificar, pero dado que no había especificación detallada al respecto, la aplicación actualmente considera estas definiciones.
 
+## Test y Code Coverage
+
+Los test automatizados constan de 14 dna que pruebas casos de mutantes, no-mutantes y dna inválidos. Se encuentran en el directorio 'test/dna'.
+
+Resultado de logs de test y code coverage se puede visualizar en el ejemplo [testandcoverage.log](/public/resources/testandcoverage.log)
+
+Adicionalmente la aplicación publica también la generación del _Code Coverage_ en HTML en [https://mutants-246102.appspot.com/coverage/index.html](https://mutants-246102.appspot.com/coverage/index.html)
+
+![coverage](/public/resources/coverage-example.png)
+
 ## :triangular_ruler: Diagramas
 
 ### Arquitectura
 
-![ARCHITECTURE](/files/arch.jpg)
+![ARCHITECTURE](/public/resources/arch.jpg)
 
 ### Secuencia
 
-![API POST](/files/api-post.jpg)
+![API POST](/public/resources/api-post.jpg)
 
-![API STATS](/files/api-stats.jpg)
-
+![API STATS](/public/resources/api-stats.jpg)

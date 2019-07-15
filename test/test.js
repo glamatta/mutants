@@ -4,7 +4,7 @@ const identifier = require('../controllers/mutanIdentifier');
 require('../lib/dnaLog');
 
 describe("Pruebas del algoritmo de detección", function() {
-  console.log("data to test:");
+  console.log(`#### ${new Date()} ####\n\nData to test:`);
   Object.keys(dnas).forEach(function(key) {
     console.log(key);
     console.dnaToTable(dnas[key].dna);
