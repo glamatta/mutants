@@ -1,0 +1,222 @@
+λ npm run coverage
+
+> mutants@1.0.0 coverage C:\DEV\workspaces\mutants
+> nyc --reporter=html --reporter=text mocha
+
+#### Sun Jul 14 2019 20:57:15 GMT-0400 (GMT-04:00) ####
+
+Data to test:
+d1
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'T' │ 'G' │ 'C' │ 'G' │ 'A' │
+│    1    │ 'C' │ 'A' │ 'G' │ 'T' │ 'G' │ 'C' │
+│    2    │ 'T' │ 'T' │ 'A' │ 'T' │ 'T' │ 'T' │
+│    3    │ 'A' │ 'G' │ 'A' │ 'C' │ 'G' │ 'G' │
+│    4    │ 'G' │ 'C' │ 'G' │ 'T' │ 'C' │ 'A' │
+│    5    │ 'T' │ 'C' │ 'A' │ 'C' │ 'T' │ 'G' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d2
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'T' │ 'G' │ 'C' │ 'G' │ 'A' │
+│    1    │ 'C' │ 'A' │ 'G' │ 'T' │ 'G' │ 'C' │
+│    2    │ 'T' │ 'T' │ 'A' │ 'T' │ 'G' │ 'T' │
+│    3    │ 'A' │ 'G' │ 'A' │ 'A' │ 'G' │ 'G' │
+│    4    │ 'C' │ 'C' │ 'C' │ 'C' │ 'T' │ 'A' │
+│    5    │ 'T' │ 'C' │ 'A' │ 'C' │ 'T' │ 'G' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d3
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │  6  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'T' │ 'G' │ 'C' │ 'T' │ 'A' │ 'A' │
+│    1    │ 'C' │ 'T' │ 'T' │ 'T' │ 'T' │ 'C' │ 'A' │
+│    2    │ 'T' │ 'T' │ 'T' │ 'T' │ 'G' │ 'T' │ 'A' │
+│    3    │ 'A' │ 'T' │ 'A' │ 'A' │ 'T' │ 'A' │ 'A' │
+│    4    │ 'C' │ 'C' │ 'C' │ 'C' │ 'T' │ 'A' │ 'A' │
+│    5    │ 'T' │ 'C' │ 'A' │ 'C' │ 'T' │ 'G' │ 'A' │
+│    6    │ 'A' │ 'T' │ 'G' │ 'C' │ 'A' │ 'T' │ 'C' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d4
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'A' │ 'A' │ 'A' │
+│    1    │ 'A' │ 'A' │ 'A' │ 'A' │
+│    2    │ 'A' │ 'A' │ 'A' │ 'A' │
+│    3    │ 'A' │ 'A' │ 'A' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┘
+d5
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    1    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    2    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    3    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    4    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    5    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    6    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+│    7    │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d6
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'T' │ 'A' │ 'C' │ 'C' │ 'A' │ 'G' │ 'A' │ 'T' │
+│    1    │ 'A' │ 'T' │ 'A' │ 'A' │ 'G' │ 'A' │ 'T' │ 'T' │
+│    2    │ 'A' │ 'A' │ 'T' │ 'G' │ 'A' │ 'T' │ 'T' │ 'T' │
+│    3    │ 'A' │ 'A' │ 'G' │ 'T' │ 'T' │ 'T' │ 'T' │ 'T' │
+│    4    │ 'A' │ 'G' │ 'A' │ 'T' │ 'T' │ 'T' │ 'A' │ 'T' │
+│    5    │ 'G' │ 'A' │ 'T' │ 'T' │ 'T' │ 'T' │ 'A' │ 'T' │
+│    6    │ 'A' │ 'T' │ 'T' │ 'A' │ 'A' │ 'T' │ 'T' │ 'T' │
+│    7    │ 'T' │ 'T' │ 'A' │ 'A' │ 'A' │ 'A' │ 'T' │ 'T' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d7
+┌─────────┐
+│ (index) │
+├─────────┤
+└─────────┘
+d8
+┌─────────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │
+├─────────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'A' │ 'A' │
+│    1    │ 'T' │ 'T' │ 'T' │
+│    2    │ 'C' │ 'C' │ 'C' │
+│    3    │ 'G' │ 'G' │ 'G' │
+└─────────┴─────┴─────┴─────┘
+d9
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'A' │ 'A' │ 'A' │
+│    1    │ 'T' │ 'A' │ 'T' │ 'T' │
+│    2    │ 'C' │ 'C' │ 'A' │ 'C' │
+└─────────┴─────┴─────┴─────┴─────┘
+d10
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'A' │ 'A' │ 'A' │
+│    1    │ 'T' │ 'A' │ 'T' │ 'T' │
+│    2    │ 'C' │ 'C' │ 'A' │ 'C' │
+│    3    │ 'G' │ 'G' │ 'G' │     │
+└─────────┴─────┴─────┴─────┴─────┘
+d11
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'a' │ 'a' │ 'A' │
+│    1    │ 'T' │ 'A' │ 'T' │ 'T' │
+│    2    │ 'C' │ 'C' │ 'A' │ 'C' │
+│    3    │ 'G' │ 'G' │ 'G' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┘
+d12
+┌─────────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │  4  │  5  │  6  │
+├─────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ ' ' │ 'A' │ ' ' │ 'A' │ ' ' │ 'A' │
+│    1    │ 'T' │ ' ' │ 'A' │ ' ' │ 'T' │ ' ' │ 'T' │
+│    2    │ 'C' │ ' ' │ 'C' │ ' ' │ 'A' │ ' ' │ 'C' │
+│    3    │ 'G' │ ' ' │ 'G' │ ' ' │ 'G' │ ' ' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+d13
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'C' │ 'T' │ 'A' │
+│    1    │ 'T' │ 'A' │ 'T' │ 'T' │
+│    2    │ 'C' │ 'C' │ 'A' │ 'C' │
+│    3    │ 'G' │ 'G' │ 'G' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┘
+d14
+┌─────────┬─────┬─────┬─────┬─────┐
+│ (index) │  0  │  1  │  2  │  3  │
+├─────────┼─────┼─────┼─────┼─────┤
+│    0    │ 'A' │ 'C' │ 'T' │ 'A' │
+│    1    │ 'T' │ 'A' │ 'A' │ 'T' │
+│    2    │ 'C' │ 'A' │ 'A' │ 'C' │
+│    3    │ 'A' │ 'G' │ 'G' │ 'A' │
+└─────────┴─────┴─────┴─────┴─────┘
+
+
+  Pruebas del algoritmo de detección
+    Análisis Horizontal
+      √ dna1: Debe encontrar 0 match
+      √ dna2: Debe encontrar 1 match
+      √ dna3: Debe encontrar 3 matches
+      √ dna4: Debe encontrar 4 matches
+      √ dna5: Debe encontrar 16 matches
+      √ dna6: Debe encontrar 3 matches
+      √ dna13: Debe encontrar 0 match
+      √ dna14: Debe encontrar 0 match
+    Análisis Vertical
+      √ dna1: Debe encontrar 0 match
+      √ dna2: Debe encontrar 1 match
+      √ dna3: Debe encontrar 2 matches
+      √ dna4: Debe encontrar 4 matches
+      √ dna5: Debe encontrar 16 matches
+      √ dna6: Debe encontrar 4 matches
+      √ dna13: Debe encontrar 0 match
+      √ dna14: Debe encontrar 0 match
+    Análisis Diagonal Derecha
+      √ dna1: Debe encontrar 0 match
+      √ dna2: Debe encontrar 1 match
+      √ dna3: Debe encontrar 1 match
+      √ dna4: Debe encontrar 1 match
+      √ dna5: Debe encontrar 10 matches
+      √ dna6: Debe encontrar 3 matches
+      √ dna13: Debe encontrar 1 match
+      √ dna14: Debe encontrar 1 match
+    Análisis Diagonal Izquierda
+      √ dna1: Debe encontrar 0 match
+      √ dna2: Debe encontrar 0 match
+      √ dna3: Debe encontrar 1 match
+      √ dna4: Debe encontrar 1 match
+      √ dna5: Debe encontrar 10 matches
+      √ dna6: Debe encontrar 5 matches
+      √ dna13: Debe encontrar 0 match
+      √ dna14: Debe encontrar 1 match
+
+  Pruebas de servicios REST
+    /GET stats
+      √ Debe entragar estadísiticas de DB en gcloud_firestore (1591ms)
+    /POST mutant
+      √ dna1: Debe responder No-mutant > code 403
+      √ dna2: Debe responder Mutant > code 200
+      √ dna3: Debe responder Mutant > code 200
+      √ dna4: Debe responder Mutant > code 200
+      √ dna5: Debe responder Mutant > code 200
+      √ dna6: Debe responder Mutant > code 200
+      √ dna7: Debe responder Bad Request > code 400
+      √ dna8: Debe responder Bad Request > code 400
+      √ dna9: Debe responder Bad Request > code 400
+      √ dna10: Debe responder Bad Request > code 400
+      √ dna11: Debe responder Bad Request > code 400
+      √ dna12: Debe responder Bad Request > code 400
+      √ dna13: Debe responder No-mutant > code 403
+      √ dna14: Debe responder Mutant > code 200
+
+  Pruebas de documentación
+    /GET Home
+(node:14600) [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated
+      √ Debe responder un HTML para el home de la documentación (594ms)
+
+
+  48 passing (2s)
+
+---------------------|----------|----------|----------|----------|-------------------|
+File                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+---------------------|----------|----------|----------|----------|-------------------|
+All files            |    94.22 |    87.32 |       85 |    95.97 |                   |
+ mutants             |       84 |    72.22 |       75 |    86.96 |                   |
+  app.js             |       84 |    72.22 |       75 |    86.96 | 36,52,58,59,83,84 |
+ mutants/controllers |    98.29 |    92.45 |      100 |      100 |                   |
+  mutanIdentifier.js |    98.29 |    92.45 |      100 |      100 |       142,143,147 |
+ mutants/lib         |      100 |      100 |      100 |      100 |                   |
+  dnaLog.js          |      100 |      100 |      100 |      100 |                   |
+---------------------|----------|----------|----------|----------|-------------------|
