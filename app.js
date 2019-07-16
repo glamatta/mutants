@@ -6,8 +6,7 @@ const {Firestore} = require('@google-cloud/firestore');
 const config = require('./config.json');
 const identifier = require('./controllers/mutanIdentifier');
 const showdown = require('showdown');
-const prettify = require('showdown-prettify');
-const converter = new showdown.Converter({emoji: true, tables: true, extensions: ['prettify']});
+const converter = new showdown.Converter({emoji: true, tables: true});
 
 const db = new Firestore();
 
